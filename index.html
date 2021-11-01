@@ -3,15 +3,94 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Rays are a lot for me | Sergey Lowly.</title>
+     <link rel="stylesheet" href=https://l0w1y.github.io/raalfm/style.css">
      <link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" href="https://l0w1y.github.io/raalfm/style.css">
+         <script type="text/javascript">
+         var gwd = gwd || {};
+gwd.actions = gwd.actions || {};
+gwd.actions.events = gwd.actions.events || {};
+gwd.actions.events.getElementById = function(id) {
+    var element = document.getElementById(id);
+    if (!element) {
+        var pageDeck = document.querySelector("gwd-pagedeck");
+        if (pageDeck) {
+            if (typeof pageDeck.getElementById === "function") {
+                element = pageDeck.getElementById(id)
+            }
+        }
+    }
+    if (!element) {
+        switch (id) {
+        case "document.body":
+            element = document.body;
+            break;
+        case "document":
+            element = document;
+            break;
+        case "window":
+            element = window;
+            break;
+        default:
+            break
+        }
+    }
+    return element
+}
+;
+gwd.actions.events.addHandler = function(eventTarget, eventName, eventHandler, useCapture) {
+    var targetElement = gwd.actions.events.getElementById(eventTarget);
+    if (targetElement) {
+        targetElement.addEventListener(eventName, eventHandler, useCapture)
+    }
+}
+;
+gwd.actions.events.removeHandler = function(eventTarget, eventName, eventHandler, useCapture) {
+    var targetElement = gwd.actions.events.getElementById(eventTarget);
+    if (targetElement) {
+        targetElement.removeEventListener(eventName, eventHandler, useCapture)
+    }
+}
+;
+gwd.actions.events.setInlineStyle = function(id, styles) {
+    var element = gwd.actions.events.getElementById(id);
+    if (!element || !styles) {
+        return
+    }
+    var transitionProperty = element.style.transition !== undefined ? "transition" : "-webkit-transition";
+    var prevTransition = element.style[transitionProperty];
+    var splitStyles = styles.split(/\s*;\s*/);
+    var nameValue;
+    splitStyles.forEach(function(splitStyle) {
+        if (splitStyle) {
+            var regex = new RegExp("[:](?![/]{2})");
+            nameValue = splitStyle.split(regex);
+            nameValue[1] = nameValue[1] ? nameValue[1].trim() : null;
+            if (!(nameValue[0] && nameValue[1])) {
+                return
+            }
+            element.style.setProperty(nameValue[0], nameValue[1])
+        }
+    });
+    function restoreTransition(event) {
+        var el = event.target;
+        el.style.transition = prevTransition;
+        el.removeEventListener(event.type, restoreTransition, false)
+    }
+    element.addEventListener("transitionend", restoreTransition, false);
+    element.addEventListener("webkitTransitionEnd", restoreTransition, false)
+}
+    </script>
+    <script type="text/javascript">
+         gwd.actions.events.registerEventHandlers=function(event){gwd.actions.events.addHandler("adcard","click",gwd.auto_AdcardClick,false)};gwd.actions.events.deregisterEventHandlers=function(event){gwd.actions.events.removeHandler("adcard","click",gwd.auto_AdcardClick,false)};document.addEventListener("DOMContentLoaded",gwd.actions.events.registerEventHandlers);document.addEventListener("unload",gwd.actions.events.deregisterEventHandlers)
+    </script>
+    <script type="text/javascript">gwd.auto_AdcardClick=function(event){gwd.actions.events.setInlineStyle("adcard","transition: all 0.5s ease-in-out; opacity:  0;")}</script>
 </head>
 
     <body class="htmlNoPages" id="main">
          <img src="https://l0w1y.github.io/raalfm/asstes/logotypes/adcard.png" id="adcard" class="adcard" onclick="window.location.href = 'https://vk.com/raalfm';">
-         <img src="https://l0w1y.github.io/raalfm/asstes/logotypes/logo.png" id="logo" class="logo" onClick="window.location.refresh();>
-         <p class="alert" id="alert">Упс, сайт еще не работает, но скоро заработает. Если вам нужны последние новости проекта, нажмите на карточку.</p>
-<style type="text/css">
+         <img src="https://l0w1y.github.io/raalfm/asstes/logotypes/logo.png" id="logo" class="logo" onClick="onClick="window.location.href = '../index.html';>
+         <p class="alert" id="alert">Uupps, The site is not working yet, but it will work soon. If you need the latest project news click on card.</p>
+         <style type="text/css">
               h1
      {
      margin:0px;
@@ -92,97 +171,4 @@ body
 }
          </style>
     </body>
-    <script type="text/javascript">
-         var gwd = gwd || {};
-gwd.actions = gwd.actions || {};
-gwd.actions.events = gwd.actions.events || {};
-gwd.actions.events.getElementById = function(id) {
-    var element = document.getElementById(id);
-    if (!element) {
-        var pageDeck = document.querySelector("gwd-pagedeck");
-        if (pageDeck) {
-            if (typeof pageDeck.getElementById === "function") {
-                element = pageDeck.getElementById(id)
-            }
-        }
-    }
-    if (!element) {
-        switch (id) {
-        case "document.body":
-            element = document.body;
-            break;
-        case "document":
-            element = document;
-            break;
-        case "window":
-            element = window;
-            break;
-        default:
-            break
-        }
-    }
-    return element
-}
-;
-gwd.actions.events.addHandler = function(eventTarget, eventName, eventHandler, useCapture) {
-    var targetElement = gwd.actions.events.getElementById(eventTarget);
-    if (targetElement) {
-        targetElement.addEventListener(eventName, eventHandler, useCapture)
-    }
-}
-;
-gwd.actions.events.removeHandler = function(eventTarget, eventName, eventHandler, useCapture) {
-    var targetElement = gwd.actions.events.getElementById(eventTarget);
-    if (targetElement) {
-        targetElement.removeEventListener(eventName, eventHandler, useCapture)
-    }
-}
-;
-gwd.actions.events.setInlineStyle = function(id, styles) {
-    var element = gwd.actions.events.getElementById(id);
-    if (!element || !styles) {
-        return
-    }
-    var transitionProperty = element.style.transition !== undefined ? "transition" : "-webkit-transition";
-    var prevTransition = element.style[transitionProperty];
-    var splitStyles = styles.split(/\s*;\s*/);
-    var nameValue;
-    splitStyles.forEach(function(splitStyle) {
-        if (splitStyle) {
-            var regex = new RegExp("[:](?![/]{2})");
-            nameValue = splitStyle.split(regex);
-            nameValue[1] = nameValue[1] ? nameValue[1].trim() : null;
-            if (!(nameValue[0] && nameValue[1])) {
-                return
-            }
-            element.style.setProperty(nameValue[0], nameValue[1])
-        }
-    });
-    function restoreTransition(event) {
-        var el = event.target;
-        el.style.transition = prevTransition;
-        el.removeEventListener(event.type, restoreTransition, false)
-    }
-    element.addEventListener("transitionend", restoreTransition, false);
-    element.addEventListener("webkitTransitionEnd", restoreTransition, false)
-}
-    </script>
-    <script type="text/javascript">
-         gwd.actions.events.registerEventHandlers=function(event)
-     {
-          gwd.actions.events.addHandler("adcard","click",gwd.auto_AdcardClick,false)
-     };
-
-     gwd.actions.events.deregisterEventHandlers=function(event) {
-          gwd.actions.events.removeHandler("adcard","click",gwd.auto_AdcardClick,false)
-     };
-
-     document.addEventListener("DOMContentLoaded",gwd.actions.events.registerEventHandlers);
-     document.addEventListener("unload",gwd.actions.events.deregisterEventHandlers)
-    </script>
-    <script type="text/javascript">
-     gwd.auto_AdcardClick=function(event) {
-     gwd.actions.events.setInlineStyle("adcard","transition: all 0.5s ease-in-out; opacity:  0;")
-     }
-</script>
 </html>
