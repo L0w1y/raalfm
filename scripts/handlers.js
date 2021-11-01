@@ -1,0 +1,1 @@
+gwd.auto_AdcardClick=function(event){gwd.actions.events.setInlineStyle("adcard","transition: all 0.5s ease-in-out; opacity:  0;")}
