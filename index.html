@@ -80,12 +80,12 @@ gwd.actions.events.setInlineStyle = function(id, styles) {
 }
     </script>
     <script type="text/javascript">
-         gwd.actions.events.registerEventHandlers=function(event){gwd.actions.events.addHandler("adcard","click",gwd.auto_AdcardClick,false)};gwd.actions.events.deregisterEventHandlers=function(event){gwd.actions.events.removeHandler("adcard","click",gwd.auto_AdcardClick,false)};document.addEventListener("DOMContentLoaded",gwd.actions.events.registerEventHandlers);document.addEventListener("unload",gwd.actions.events.deregisterEventHandlers)
+         gwd.actions.events.registerEventHandlers=function(event){gwd.actions.events.addHandler("card","click",gwd.auto_AdcardClick,false)};gwd.actions.events.deregisterEventHandlers=function(event){gwd.actions.events.removeHandler("adcard","click",gwd.auto_AdcardClick,false)};document.addEventListener("DOMContentLoaded",gwd.actions.events.registerEventHandlers);document.addEventListener("unload",gwd.actions.events.deregisterEventHandlers)
     </script>
 </head>
 
     <body class="htmlNoPages" id="main">
-         <img src="https://cdn.discordapp.com/attachments/904612719691460682/904612843054317598/adcard.png" id="adcard" class="adcard" onclick="window.location.href = 'https://vk.com/raalfm';">
+         <img src="https://cdn.discordapp.com/attachments/904612719691460682/904612843054317598/adcard.png" id="card" class="card" onclick="window.location.href = 'https://vk.com/raalfm';">
          <img src="https://cdn.discordapp.com/attachments/904612719691460682/904612854244728832/logo.png" id="logo" class="logo" onClick="onClick="window.location.reload();>
          <p class="alert" id="alert">Uupps, The site is not working yet, but it will work soon. If you need the latest project news click on card.</p>
          <style type="text/css">
@@ -126,7 +126,7 @@ body
      background-color:#fff;
 }
 
-.adcard
+.card
 {
      position:absolute;
      transform-origin:50% 50% 0px;
